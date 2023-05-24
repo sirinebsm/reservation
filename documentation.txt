@@ -19,7 +19,6 @@ Technologies utilisées
 Node.js : Plateforme de développement pour les microservices.
 Express.js : Framework pour la construction des microservices.
 Apollo Server : Mise en place d'une API GraphQL pour la communication entre les microservices.
-Sequelize ou Mongoose : Interaction avec la base de données (MySQL, PostgreSQL ou MongoDB).
 JWT : Mécanisme d'authentification et d'autorisation des utilisateurs.
 Installation
 Clonez le dépôt : git clone <repository_url>

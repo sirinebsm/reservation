@@ -1,0 +1,16 @@
+syntax = "proto3";
+package reservation;
+// Définition du message movie
+message Room {
+string id = 1;
+string name= 2;
+int price=   3;
+
+}
+message Reservation {
+  string id = 1;
+  string room_id = 2;
+  string guest_name = 3;
+}
+
+

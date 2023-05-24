@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package room;
+
+message Room {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated string amenities = 4;
+}

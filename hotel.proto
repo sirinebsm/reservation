@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package hotel;
+
+message Room {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated string amenities = 4;
+}
+
+message Reservation {
+  string id = 1;
+  string roomId = 2;
+  string guestName = 3;
+  string checkInDate = 4;
+  string checkOutDate = 5;
+}
+
+service ReservationService {
+  rpc SearchRoomsRequest(SearchRoomsRequest) returns (SearchRoomsResponse);
+  rpc GetRooms(GetRoomsRequest) returns (GetRoomsResponse) {}
+  rpc ReserveRoom (ReservationRequest) returns (ReservationResponse) {}
+  rpc CancelReservation (CancelReservationRequest) returns (google.protobuf.Empty) {}
+}
+
+
+message ReservationRequest {
+  string roomId = 1;
+  string guestName = 2;
+  string checkInDate = 3;
+  string checkOutDate = 4;
+}
+message SearchRoomsRequest {
+string query = 1;
+}
+message SearchRoomsResponse {
+repeated Room rooms= 1;
+}
+message GetRoomsRequest {
+string room_id = 1;
+}
+message GetRoomsResponse {
+Room room = 1;
+}
+
+message ReservationResponse {
+  Reservation reservation = 1;
+}
+
+message CancelReservationRequest {
+  string reservationId = 1;
+}
